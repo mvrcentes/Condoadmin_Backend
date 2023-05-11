@@ -1,11 +1,24 @@
-import  { createClient }  from '@supabase/supabase-js'
-import dotenv from 'dotenv'
-dotenv.config({ path: './.env.local' })
-import cors from 'cors'
+// require('./database')
+import './database.js'
 
+// const cors = require('cors')
+import cors from 'cors'
+// const express = require('express')
 import express from 'express'
 
-const supabase = createClient(process.env.VITE_SUPABASE_URL, process.env.VITE_SUPABASE_ANON_KEY)
+// Routes
+import houses from './routes/adminHouses.routes.js'
+import services from './routes/services.routes.js'
 
-export default supabase
+const app = express()
 
+app.use(cors())
+app.use(express.json())
+
+
+//routes
+app.use('/api/houses', houses)
+
+app.use('/api/services', services)
+
+export default app
