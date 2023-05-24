@@ -9,6 +9,7 @@ import express from 'express'
 // Routes
 import houses from './routes/adminHouses.routes.js'
 import services from './routes/services.routes.js'
+import complaints from './routes/complaints.routes.js'
 
 const app = express()
 
@@ -20,5 +21,7 @@ app.use(express.json())
 app.use('/api/houses', houses)
 
 app.use('/api/services', services)
+
+app.use('/api/complaints', complaints)
 
 export default app
