@@ -8,7 +8,6 @@ router.route("/")
     .get(getHouses)
     .post(createHouse)
 
-
 router.route("/:id")
     .get(getResidentsByHouseID)
     .post(createResident)
