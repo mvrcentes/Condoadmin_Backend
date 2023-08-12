@@ -1,10 +1,12 @@
 import { Router } from "express"
 
-import { getComplaints, getComplaintByID } from "../controllers/complaints.controllers.js"
+import { getComplaints, getComplaintByID, createComplaint } from "../controllers/complaints.controllers.js"
 
 const router = Router()
 
-router.route("/").get(getComplaints)
+router.route("/")
+    .get(getComplaints)
+    .post(createComplaint)
 
 router.route("/:id").get(getComplaintByID)
 
