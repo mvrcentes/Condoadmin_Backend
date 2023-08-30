@@ -12,6 +12,9 @@ import services from './routes/services.routes.js'
 import complaints from './routes/complaints.routes.js'
 import announcements from './routes/announcements.routes.js'
 
+//authorization route
+import login from './routes/authorization.routes.js'
+
 const app = express()
 
 app.use(cors())
@@ -26,5 +29,7 @@ app.use('/api/services', services)
 app.use('/api/complaints', complaints)
 
 app.use('/api/announcements', announcements)
+
+app.use('/login', login)
 
 export default app
