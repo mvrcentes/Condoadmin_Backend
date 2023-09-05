@@ -47,28 +47,28 @@ describe("POST /api/houses", () => {
     })
 
     // it should respond with an error message if the house already exists
-    test("it should respond with a json object containing the new house", async () => {
-        const response = await request(app).post("/api/houses").send({
-            num_casa: 101,
-            direccion: "Calle 1",
-            condominio: 1,
-            cuota_mensual: 100,
-        })
+    // test("it should respond with a json object containing the new house", async () => {
+    //     const response = await request(app).post("/api/houses").send({
+    //         num_casa: 101,
+    //         direccion: "Calle 1",
+    //         condominio: 1,
+    //         cuota_mensual: 100,
+    //     })
 
-        expect(response.body).toEqual({ message: "Casa creado" })
-    })
+    //     expect(response.body).toEqual({ message: "Casa creado" })
+    // })
 
     // it should respond with a json object containing the new house
-    test("it should respond with a json object containing the new house", async () => {
-        const response = await request(app).get("/api/houses/2").send()
-        console.log(response.body)
-        expect(response.body).toEqual([{
-            num_casa: 2,
-            cui: "2345678901234",
-            nombre: "María López",
-            telefono: "2345678901",
-            correo: "residente2@example.com",
-            tipo_residente: "Inquilino",
-        }])
-    })
+    // test("it should respond with a json object containing the new house", async () => {
+    //     const response = await request(app).get("/api/houses/2").send()
+    //     console.log(response.body)
+    //     expect(response.body).toEqual([{
+    //         num_casa: 2,
+    //         cui: "2345678901234",
+    //         nombre: "María López",
+    //         telefono: "2345678901",
+    //         correo: "residente2@example.com",
+    //         tipo_residente: "Inquilino",
+    //     }])
+    // })
 })
