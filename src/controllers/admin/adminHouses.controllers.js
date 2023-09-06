@@ -120,7 +120,9 @@ export const createResident = async (req, res) => {
         options: {
           data: {
             username: `${nombre.substring(0, 3).toLowerCase()}${year.toString().substring(2)}0${num_casa}${conteo_residentes + 1}`,
-            admin: administrador
+            admin: administrador,
+            cui: cui,
+            num_casa: num_casa,
           }
         }
       }
