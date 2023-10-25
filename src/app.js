@@ -19,7 +19,7 @@ const app = express()
 
 // Configura las opciones de CORS para permitir el acceso desde el host deseado
 const corsOptions = {
-  origin: 'https://condoadminfront.azurewebsites.net', // Reemplaza con el dominio del nuevo host
+  origin: 'http://condoadminfront.azurewebsites.net', // Reemplaza con el dominio del nuevo host
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Habilita el envío de cookies y encabezados de autenticación
 };
