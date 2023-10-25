@@ -1,18 +1,10 @@
-// require('./database')
 import './database.js'
-
-// const cors = require('cors')
 import cors from 'cors'
-// const express = require('express')
 import express from 'express'
-
-// Routes
 import houses from './routes/adminHouses.routes.js'
 import services from './routes/services.routes.js'
 import complaints from './routes/complaints.routes.js'
 import announcements from './routes/announcements.routes.js'
-
-//authorization route
 import login from './routes/authorization.routes.js'
 
 const app = express()
@@ -25,18 +17,32 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use((req, res, next) => {
+  res.header(
+    'Access-Control-Allow-Headers, *, Access-Control-Allow-Origin',
+    'Origin, X-Requested-with, Content_Type, Accept, Authorization',
+    'http://localhost:4200'
+  );
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+    return res.status(200).json({});
+  }
+  next();
+});
 app.use(express.json());
 
-
-//routes
+// Agrega tus rutas aquí
 app.use('/api/houses', houses)
-
 app.use('/api/services', services)
-
 app.use('/api/complaints', complaints)
-
 app.use('/api/announcements', announcements)
-
 app.use('/login', login)
 
-export default app
+const PORT = 4000
+
+const main = async () => {
+  await app.listen(PORT)
+  console.log(`Server running on port ${PORT}`)
+}
+
+main()
