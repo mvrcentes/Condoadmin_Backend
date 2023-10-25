@@ -9,14 +9,14 @@ import login from './routes/authorization.routes.js'
 
 const app = express()
 
-// Configura las opciones de CORS para permitir el acceso desde el host deseado
-const corsOptions = {
-  origin: 'https://condoadminfront.azurewebsites.net', // Reemplaza con el dominio del nuevo host
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-  credentials: true, // Habilita el envío de cookies y encabezados de autenticación
-};
+// // Configura las opciones de CORS para permitir el acceso desde el host deseado
+// const corsOptions = {
+//   origin: 'https://condoadminfront.azurewebsites.net', // Reemplaza con el dominio del nuevo host
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+//   credentials: true, // Habilita el envío de cookies y encabezados de autenticación
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use((req, res, next) => {
   res.header(
     'Access-Control-Allow-Headers, *, Access-Control-Allow-Origin',
