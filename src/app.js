@@ -36,7 +36,8 @@ app.use('/api/houses', houses)
 app.use('/api/services', services)
 app.use('/api/complaints', complaints)
 app.use('/api/announcements', announcements)
-app.use('/login', login)
+app.post('/login', login);
+
 
 const PORT = 4000
 
