@@ -38,12 +38,4 @@ app.use('/api/complaints', complaints)
 app.use('/api/announcements', announcements)
 app.use('/api/login', login)
 
-
-const PORT = 4000
-
-const main = async () => {
-  await app.listen(PORT)
-  console.log(`Server running on port ${PORT}`)
-}
-
-main()
+export default app
